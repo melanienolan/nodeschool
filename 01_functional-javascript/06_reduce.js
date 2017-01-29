@@ -1,13 +1,11 @@
-function countWords(inputWords) {
-	return inputWords.reduce(function(a, b){
-		if (a[b]) {
-			a[b] += 1;
+function countWords(inputWords){
+	return inputWords.reduce(function(obj, item){
+		if(!obj[item]){
+			obj[item] = 0;
 		}
-		else {
-			a[b] = 1;
-		}
-		return a;
-	}, {});
+		obj[item]++;
+		return obj;
+	}, {})
 }
 
 module.exports = countWords;
